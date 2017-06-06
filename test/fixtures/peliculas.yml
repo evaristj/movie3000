@@ -5,9 +5,13 @@ one:
   stars: 1
   main_actor: MyString
   year: 1
+  description: MyString
+  casting: MyString
 
 two:
   name: MyString
   stars: 1
   main_actor: MyString
   year: 1
+  description: MyString
+  casting: MyString
