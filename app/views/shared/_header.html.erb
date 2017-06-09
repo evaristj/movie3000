@@ -1,15 +1,17 @@
 <nav class="navbar navbar-inverse responsive">
 	<div class="container-fluid">
-		<div class="col-md-4 col-xs-6 col-lg-4">
+		<div class="col-md-3 col-xs-6 col-lg-3">
 			<img src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1496831640/moviepng_qvil7x.png" class="responsive imagen">
 		</div>
-		<div class="col-lg-4 col-md-4 col-xs-6"></div>
-		<div class="col-lg-4 col-md-4 col-xs-6">
+		<div class="col-lg-4 col-md-4 col-xs-hidden">
+			<br><h1>Tu web preferida de películas</h1>
+		</div>
+		<div class="col-lg-5 col-md-5 col-xs-6">
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li> <%= link_to "¿Quienes somos?", about_path %> </li>
-					<li> <%=link_to "Login", new_user_session_path %> </li>
-					<li> <%=link_to "Sign up", new_user_registration_path %> </li>
+					<li> <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-bullhorn"><b> <%= link_to "¿Quienes somos?", about_path %></b> </span></button> </li>
+					<li><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-user"> <b><%=link_to "Login", new_user_session_path %></b> </span></li>
+					<li><button type="button" class="btn btn-warning"> <span class="glyphicon glyphicon-log-in"> <b> <%=link_to "Sign up", new_user_registration_path %> </b> </span> </button> </li>
 			</div>
 		</div>
 	</div>
