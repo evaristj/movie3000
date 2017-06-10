@@ -4,49 +4,19 @@
 
 @import'variables';
 
-div ul li {
-	left: 10px;
-	margin: 10px 5px 10px 5px;
-	padding: 10px 5px 10px 5px;
+/*todo esto es para el header*/
+.link {
+	background-color: whitesmoke;
+	padding: 10px 10px 10px 10px;
+	border-radius: 2px solid white;
 }
-b {
-		padding: 10px 10px 10px 10px;
-}
-div h1 {
-	color: white;
-}
-.navbar-inverse {
-	height: 150px;
-}
-.imagen {
-	position: relative;
-	top: -30px;
-	left: 30px;
-	background-color: #F2F2F2;
-}
-.linea1 {
-	background-color: #B40404;
-	width: 100%;
-	height: 30px;
-	position: absolute;
-	top: 150px;
-}
+/*fin de header */
+/* inicio footer*/
+div p {
+	right: 0px;
+	font-size: 16px;
+	margin-top: 20px;
 
-.pelistop {
-	position: absolute;
-	top: 185px;
-	left: 35px;
-}
-
-.parte3 {
-	position: absolute;
-	top: 530px;
-	left: 35px;
-}
-.parte4 {
-	position: absolute;
-	top: 800px;
-	left: 35px;
 }
 .final {
 	position: absolute;
@@ -54,4 +24,19 @@ div h1 {
 	background-color: #8A0808;
 	width: 100%;
 	height: 200px;
+}
+
+
+/*fin footer*/
+/* cuerpo web*/
+.pelistop {
+	position: absolute;
+	top: 185px;
+	left: 90px;
+}
+
+.parte4 {
+	position: absolute;
+	top: 800px;
+	left: 35px;
 }
