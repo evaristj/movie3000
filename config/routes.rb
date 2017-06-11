@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'comentarios/index'
+  resources :comentarios
+
   devise_for :users
   get 'statics/index'
 
@@ -14,6 +17,10 @@ Rails.application.routes.draw do
   get '/about' => 'statics#about', :as => :about
 
   root :to =>"peliculas#index"
+
+  resources :peliculas do
+    resources :comentarios
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

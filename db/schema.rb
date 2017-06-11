@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606153953) do
+ActiveRecord::Schema.define(version: 20170611113444) do
+
+  create_table "comentarios", force: :cascade do |t|
+    t.text "comment"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "pelicula_id"
+    t.index ["pelicula_id"], name: "index_comentarios_on_pelicula_id"
+  end
 
   create_table "peliculas", force: :cascade do |t|
     t.string "name"
@@ -21,6 +30,17 @@ ActiveRecord::Schema.define(version: 20170606153953) do
     t.string "casting"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "topmovies", force: :cascade do |t|
+    t.string "name"
+    t.integer "stars"
+    t.integer "ranking"
+    t.integer "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_topmovies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
