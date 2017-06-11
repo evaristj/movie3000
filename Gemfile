@@ -56,5 +56,9 @@ gem "font-awesome-rails"
 #user and admin user authentication
 gem 'devise'
 
-gem 'bcrypt'
-
+gem 'bcrypt', '~>3.1.11'
+	
+# Active admin
+gem 'activeadmin', github: 'activeadmin'
+# gema cancancan para añadir adminuser
+gem 'cancancan', '~> 2.0'

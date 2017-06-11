@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'settings/index'
+  resources :settings
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'comentarios/index'
   resources :comentarios
 
