@@ -1,2 +1,49 @@
-<h1>Settings#index</h1>
-<p>Find me in app/views/settings/index.html.erb</p>
+<!-- tipo de letra-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style>
+	body {
+	font-family: 'Montserrat', sans-serif;
+	}
+</style>
+<!-- enlace a header-->
+<%= render "shared/header" %>
+
+<!-- cuerpo de página settings-->
+<div class="container">
+	<div class="row">
+		<p class="opciones">CONFIGURACIÓN DE LA CUENTA</p>
+		<div class="col-md-1 col-lg-1"></div>
+		<div class="col-xs-12 col-md-8 col-lg-8">
+			<div class="interlineado"><p><b>Personal information </b><a href="#"><b>	Edit</b></a></p>
+			<p><h5>Edit personal information associated with your Rotten Tomatoes account.</h5></p></div><br>
+
+			<div class="interlineado"><p><b>Change or Confirm Email Address </b><a href="#"><b> Edit </b></a></p>
+			<p><h5>Change or confirm your email address for your Rotten Tomatoes account.</h5></p></div><br>
+
+			<div class="interlineado"><p><b>Profile Display Name </b><a href="#"><b> Edit </b></a></p>
+			<p><h5>Edit your public profile display name.</h5></p></div><br>
+
+			<div class="interlineado"><p><b>Profile Details </b><a href="#"><b> Edit </b></a></p>
+			<p><h5>Edit public profile information about yourself.</h5></p></div><br>
+
+			<div class="interlineado"><p><b>Email Preferences </b><a href="#"><b> Edit </b></a></p>
+			<p><h5>Modify your email subscription settings.</h5></p></div><br>
+
+			<div class="interlineado"><p><b>Password </b><a href="#"><b> Edit </b></a></p>
+			<p><h5>Change the password for your Rotten Tomatoes account.</h5></p></div><br>
+
+			<div class="interlineado"><p><b>Privacy Settings </b><a href="#"><b> Edit </b></a></p>
+			<p><h5>Manage your profile visibility and share settings.</h5></p></div><br>
+
+			<div class="interlineado"><p><b>Change Country </b><a href="#"><b> Edit </b></a></p>
+			<p><h5>Manage your localization setting.</h5></p></div><br>
+			<div class="interlineado"><p><b>Delete Account </b><a href="#"><b> Delete Account</b></a></p>
+			<p><h5>Terminate your Rotten Tomatoes account and disconnect from any attached social networks.</h5></p></div><br>
+		</div>
+	</div>
+	<hr>
+</div>
+<hr>
+
+<!--inicio footer-->
+<%= render "shared/footer" %>
