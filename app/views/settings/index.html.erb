@@ -40,6 +40,22 @@
 			<div class="interlineado"><p><b>Delete Account </b><a href="#"><b> Delete Account</b></a></p>
 			<p><h5>Terminate your Rotten Tomatoes account and disconnect from any attached social networks.</h5></p></div><br>
 		</div>
+		<div class="col-xs-12">
+			<!-- COMPROBACIO DE SETTING SI NO ES NULL -->   	 
+		 <%if !@setting.nil?%>
+		 
+		   	 <p>Country&nbsp;<%= @setting.country %></p><br/><br/>
+		   	 <p>Language&nbsp;<%= @setting.language %></p><br/><br/>
+		 
+		      	<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class:'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
+		       	<br></br>
+		    
+		 <%else%>
+		 
+		   	<%= link_to 'Añadir', new_setting_path, title:"Añadir setting !!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
+		 <%end%>
+</div>
+		</div>
 	</div>
 	<hr>
 </div>
