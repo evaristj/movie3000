@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
-  get 'settings/index'
 
-  resources :settings
+  devise_for :users
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   ActiveAdmin.routes(self)
 
+  get 'settings/index'
+
+  resources :settings
+
   get 'comentarios/index'
 
   resources :comentarios
 
-  devise_for :users
+  
 
   get 'statics/index'
 
@@ -20,8 +23,6 @@ Rails.application.routes.draw do
   get 'peliculas/index'
 
   resources :peliculas
-
-  root :to =>"statics#index"
 
   get '/index' => 'statics#index', :as => :index
 
@@ -37,4 +38,7 @@ Rails.application.routes.draw do
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  root :to =>"statics#index"
+
 end
