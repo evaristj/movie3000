@@ -1,3 +1,18 @@
 // Place all the styles related to the settings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* cuerpo de la página */
+
+.interlineado {
+	line-height: 0px;
+}
+.opciones {
+	margin: 20px;
+	padding: 20px;
+	background-color: #FE9A2E;
+	font-size: 24px;
+	font-weight: 400;
+	border: 1px dashed #FF4000;
+	left: 1px;
+}
