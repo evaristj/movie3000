@@ -2,28 +2,31 @@ class SettingsController < ApplicationController
 	layout "admin"
 
   def index
-    if current_user.setting==nil
-        @setting = Setting.create(user_id: current_user.id)
-        @setting.save
-    end
-    @user = current_user.setting
+  	@setting = current_user.setting
+    # if current_user.setting==nil
+    #     @setting = Setting.create(user_id: current_user.id)
+    #     @setting.save
+    # end
+    # @user = current_user.setting
     # @user =User.includes(:setting).where('settings.user_id' => current_user.id)
     # @user = AdminUser.find(current_user.id, :include => :setting)
   end
 
-	def create
-    @setting = Setting.create(user_id: current_user.id, language: 
-    	params[:language], country: params[:country])
- 
-	   if @setting.save
-		redirect_to settings_path
-	  else
-		render :new
-	  end
+
+def create
+  @setting = current_user.build_setting(setting_params)
+
+   if @setting.save
+    redirect_to settings_path
+  else
+    render :new
   end
+end
+
+	 
 
   def new
-    @setting = Setting.new
+    @setting = current_user.build_setting
   end
 
 	def show
@@ -32,7 +35,7 @@ class SettingsController < ApplicationController
 
 # a partir de aqui es prueba
 	def edit
-  @setting = Setting.find(params[:id])
+  	@setting = Setting.find(params[:id])
 	end
  
 	def update

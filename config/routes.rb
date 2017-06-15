@@ -14,8 +14,6 @@ Rails.application.routes.draw do
 
   resources :comentarios
 
-  
-
   get 'statics/index'
 
   get 'statics/about'
@@ -26,11 +24,11 @@ Rails.application.routes.draw do
 
   get '/index' => 'statics#index', :as => :index
 
-  root :to =>"statics#about"
+  #root :to =>"statics#about"
 
   get '/about' => 'statics#about', :as => :about
 
-  root :to =>"peliculas#index"
+  #root :to =>"peliculas#index"
 
   resources :peliculas do
     
