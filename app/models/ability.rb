@@ -3,10 +3,16 @@ class Ability
 
     def initialize ( user)
     user ||= AdminUser.new # guest user (not logged in)
-    if user.id == 1
+    if user.id == 2
     can :manage, :all
     else
     can :read, Pelicula
+    can :read, ActiveAdmin: :page, :name => "Dashboard"
+    # can :update_locate, User
+    # can :update_active, User
+    # can :read, AwAccount
+    # can :read, Domain
+    # can :manage, AwGeotargeting
     end
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
