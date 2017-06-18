@@ -7,7 +7,6 @@ class Ability
     can :manage, :all
     else
     can :read, Pelicula
-    can :read, ActiveAdmin: :page, :name => "Dashboard"
     # can :update_locate, User
     # can :update_active, User
     # can :read, AwAccount

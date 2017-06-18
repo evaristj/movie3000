@@ -3,28 +3,16 @@ class SettingsController < ApplicationController
 
   def index
   	@setting = current_user.setting
-    # if current_user.setting==nil
-    #     @setting = Setting.create(user_id: current_user.id)
-    #     @setting.save
-    # end
-    # @user = current_user.setting
-    # @user =User.includes(:setting).where('settings.user_id' => current_user.id)
-    # @user = AdminUser.find(current_user.id, :include => :setting)
   end
+	def create
+	  @setting = current_user.build_setting(setting_params)
 
-
-def create
-  @setting = current_user.build_setting(setting_params)
-
-   if @setting.save
-    redirect_to settings_path
-  else
-    render :new
-  end
-end
-
-	 
-
+	   if @setting.save
+	    redirect_to settings_path
+	  else
+	    render :new
+	  end
+	end
   def new
     @setting = current_user.build_setting
   end
@@ -32,12 +20,10 @@ end
 	def show
 	  @setting = Setting.find(params[:id])
 	end
-
 # a partir de aqui es prueba
 	def edit
   	@setting = Setting.find(params[:id])
 	end
- 
 	def update
  	 	@setting = Setting.find(params[:id])
  
@@ -47,11 +33,8 @@ end
 		render :index
   	end
 	end
- 
 	private
 		def setting_params
   	params.require(:setting).permit(:country, :language)
 	end
-
-
 end
