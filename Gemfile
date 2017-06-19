@@ -62,3 +62,5 @@ gem 'bcrypt', '~>3.1.11'
 gem 'activeadmin', github: 'activeadmin'
 # gema cancancan para añadir adminuser
 gem 'cancancan', '~> 2.0'
+# gema para pagos por internet
+gem 'stripe', '~> 2.11'
