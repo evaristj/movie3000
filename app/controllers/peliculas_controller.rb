@@ -15,7 +15,7 @@ class PeliculasController < ApplicationController
    def create
       @pelicula = Pelicula.new(pelicula_params)
       if @pelicula.save
-         redirect_to root_path, :notice => "Se ha guardado la peli"
+         redirect_to peliculas_path, :notice => "Se ha guardado la peli"
       else
          render "new"
       end
@@ -29,7 +29,7 @@ class PeliculasController < ApplicationController
       @pelicula = Pelicula.find(params[:id])
     
       if @pelicula.update_attributes(pelicula_params)
-         redirect_to root_path, :notice => "éxito!"
+         redirect_to peliculas_path, :notice => "éxito!"
       else
        render "edit"
       end
@@ -38,7 +38,7 @@ class PeliculasController < ApplicationController
    def destroy
       @pelicula = Pelicula.find(params[:id])
       @pelicula.destroy
-      redirect_to root_path, :notice => "Eliminado"
+      redirect_to peliculas_path, :notice => "Eliminado"
    end
 
    private

@@ -12,7 +12,7 @@ class ComentariosController < ApplicationController
 	# CREATE 
 	def create
 		@pelicula = Pelicula.find(params[:pelicula_id])
-		@comentario = @pelicula.comentarios.create(comentarios_params)
+		@comentario = @pelicula.comentarios.create(comentario_params)
 		redirect_to pelicula_path(@pelicula)
 	end
 

@@ -1,27 +1,26 @@
-<div class="box">
-    <div class="alert"><i class="fa fa-th-large fa-1x color-blue"></i>&nbsp;Editar Pelicula</div> 
-        <%= form_for(@pelicula) do |f| %>
-        <div class="field">
-            <%= f.text_field :name, placeholder: "Nombre", class:"form-control" %>
-        </div> 
-        <div class="field">
-            <%= f.text_field :stars, placeholder: "Stars", class:"form-control" %>
-        </div> 
-        <div class="field">
-            <%= f.text_field :main_actor, placeholder: "Actor", class:"form-control" %>
-        </div>    
-        <div class="field">
-            <%= f.text_field :year, placeholder: "Año", class:"form-control" %>
-        </div>    
-        <div class="field">
-            <%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
-        </div>
+<div class="container">
+  <div class="box">
+    <div class="alert">
+      <h2><i class="fa fa-th-large fa-1x color-blue"> Editar Pelicula</i></h2>
+    </div> 
+    <%= form_for(@pelicula) do |f| %>
+    <div class="field"> Titulo
+      <%= f.text_field :name, placeholder: "Nombre", class:"form-control" %>
+    </div> 
+    <div class="field"> Estrellas
+      <%= f.text_field :stars, placeholder: "Stars", class:"form-control" %>
+    </div> 
+    <div class="field"> Actor principal
+      <%= f.text_field :main_actor, placeholder: "Actor", class:"form-control" %>
+    </div>    
+    <div class="field"> Año de estreno
+      <%= f.text_field :year, placeholder: "Año", class:"form-control" %>
+    </div>    
+    <div class="field">
+      <%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
+    </div>
     <% end %>
-    <%= link_to 'Listado de Peliculas', @pelicula, class:"btn btn-sm btn-primary", style:"margin-top: 15px;" %> 
-  <br></br> 
-     
- 
-
-</div> <!-- end box -->
-
- 
+    <%= link_to 'Listado de Peliculas', peliculas_path, class:"btn btn-sm btn-primary", style:"margin-top: 15px;" %> 
+    <br></br> 
+  </div> <!-- end box -->
+</div> <!-- fin container-->
