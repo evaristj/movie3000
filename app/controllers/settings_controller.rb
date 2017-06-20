@@ -2,7 +2,7 @@ class SettingsController < ApplicationController
 	layout "admin"
 
   def index
-  	@setting = current_user.setting
+  	@settings = current_user.setting
   end
 	def create
 	  @setting = current_user.build_setting(setting_params)
