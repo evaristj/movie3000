@@ -4,7 +4,7 @@ class SettingsController < ApplicationController
 
   def index
   	@user = current_user
-  	@settings = current_user.setting
+  	@setting = current_user.setting
   end
 	def show
 	  @setting = Setting.find(params[:id])
