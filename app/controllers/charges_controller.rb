@@ -17,7 +17,10 @@ class ChargesController < ApplicationController
 	    :description => 'Rails Stripe customer',
 	    :currency    => 'usd'
 	  )
-	  
+	  current_user.payments.create(subscription: false, channel: 'stripe', amount: @amount)
+    flash[:success] = t('flash.payment')
+    redirect_to settings_path
+    
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to new_charge_path
