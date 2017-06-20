@@ -1,16 +1,23 @@
 <div class="container">
-	<center><h1>Aquí todas las películas que tenemos en la BBDD</h1></center>
-<hr>
+	<center><h1>Aquí todas las películas que tenemos en la BBDD</h1></center><hr>
 	<% @peliculas.each do |peli| %>
-
-		<p><%= link_to peli.name, peli %></p>
-		<p><%= peli.stars %></p>
-		<p><%= peli.main_actor %></p>
-		<p><%= peli.year %></p>
+	<div class="row">
+		<div class="col-md-3"> 
+			Título: <p class="bbddpelis"><%= link_to peli.name, peli %></p> 
+		</div>
+		<div class="col-md-3"> 
+			Estrellas: <p class="bbddpelis"><%= peli.stars %></p> 
+		</div>
+		<div class="col-md-3"> 
+			Actor principal: <p class="bbddpelis"><%= peli.main_actor %></p> 
+		</div>
+		<div class="col-md-3"> 
+			Año de estreno: <p class="bbddpelis"><%= peli.year %></p> 
+		</div>
+	</div>
 		<p> <%= link_to "Editar Pelicula", edit_pelicula_path(peli) %> </p>
 	<hr>
 	<%end%>
-
 	<p> <%= link_to "Añadir nueva pelicula", new_pelicula_path %> </p>
 <hr>
 </div>

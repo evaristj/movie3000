@@ -1,17 +1,8 @@
-
-
-<!-- CREAR COMENTARIO -->
-<%= form_for ([@ pelicula , @ pelicula.comentarios.build ]) do | f | %>
-<p>
-<%= f.label :name %><br>
-<%= f.text_field :name %>
-</p>
-<p>
-<%= f.label :comment %><br>
-<%= f.text_area :comment , size: " 80x4 " %>
-</p>
-<p>
-<%= f.submit ' Guardar ', class: " btn btn-xs btn-primary "%>
-</p>
+<div class="container">
+	<!-- CREAR COMENTARIO -->
+	<%= form_for([@pelicula,@pelicula.comentarios.build]) do |f| %>
+	<p> <%= f.label :name %> <br> <%= f.text_field :name %> </p>
+	<p> <%= f.label :comment %> <br> <%= f.text_area :comment , size: "80x4" %> </p>
+	<p> <%= f.submit 'Guardar', class: "btn btn-xs btn-primary" %> </p>
+	<% end %>
 </div> <!-- end panel -->
-<% end %>
