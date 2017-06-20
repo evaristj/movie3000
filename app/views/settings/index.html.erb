@@ -2,7 +2,7 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <style>
 	body {
-	font-family: 'Montserrat', sans-serif;
+		font-family: 'Montserrat', sans-serif;
 	}
 </style>
 <!-- enlace a header-->
@@ -10,23 +10,31 @@
 
 <!-- cuerpo de página settings-->
 <div class="container">
+	<% if flash.present? %>
+		<div class="row">
+			<div class="col-sm-12 col-md-6 colmd-offset-3" style="padding:25px">
+			<%= render partial: "shared/flash_messages", flash: flash %>
+		</div>
+	<% end %>
 	<div class="row">
-		<p class="opciones">CONFIGURACIÓN DE LA CUENTA</p>
-<hr><br>
-		<div class="col-xs-12 col-md-6 col-lg-6">
-			<!-- COMPROBACIO DE SETTING SI NO ES NULL -->   	 
-		 <%if !@setting.nil?%>		 
-		   	 <p>Country&nbsp;<%= @setting.country %></p><br/><br/>
-		   	 <p>Language&nbsp;<%= @setting.language %></p><br/><br/>	 
-		      	<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class:'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
-		       	<br></br>
-		 <%else%>
-		   	<%= link_to 'Añadir', new_setting_path, title:"Añadir setting !!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
-		 <%end%>
-		</div>
-<br><hr>
-
-		</div>
+		<p class="opciones">CONFIGURACIÓN DE LA CUENTA</p><hr><br>
+		<div class="col-xs-12 col-md-10 col-lg-10">
+			<h4>Cambiar idioma y país de tu cuenta</h4>
+					<!-- COMPROBACIO DE SETTING SI NO ES NULL -->   	 
+				 	<% if !@setting.nil? %>
+		 		<div class="col-md-3">		 
+		   		<p>País: <%= @setting.country %></p><br/><br/>
+		   	</div>
+		   	
+		   		<p>Idioma: <%= @setting.language %></p><br/><br/>	 
+		   	<div class="col-md-3">
+		      <%= link_to 'Editar', edit_setting_path(@setting.id), :title => "Editar", class:'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
+		      <br></br>
+				 	<%else%>
+				   	<%= link_to 'Añadir', new_setting_path, title:"Añadir setting!!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
+				 	<%end%>
+		 		</div>
+		</div><br><hr>
 		<div class="col-xs-12 col-md-8 col-lg-8">
 			<div class="interlineado"><p><b>Personal information </b><a href="#"><b>	Edit</b></a></p>
 			<p><h5>Edit personal information associated with your Rotten Tomatoes account.</h5></p></div><br>

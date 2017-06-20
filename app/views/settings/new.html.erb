@@ -1,14 +1,16 @@
-<hr>
 <div class="container">
-<%= form_for (@setting) do |f| %> 
+  <hr>
+  <div class="container">
+    <%= form_for(@setting) do |f| %> 
     	<div class="field">
-        	<%= f.text_field :country, placeholder: "Country", class:"form-control" %>
+        <%= f.text_field :country, placeholder: "Country", class:"form-control" %>
     	</div>
     	<div class="field">
-        	<%= f.text_field :language, placeholder: "Language", class:"form-control" %>
+        <%= f.text_field :language, placeholder: "Language", class:"form-control" %>
     	</div>      	 
     	<div class="field">
-        	<%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
+        <%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
     	</div>
-	<% end %>
+  	<% end %>
+  </div>
 </div>

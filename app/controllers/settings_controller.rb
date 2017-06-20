@@ -1,13 +1,18 @@
 class SettingsController < ApplicationController
+	before_action :authenticate_user!
 	layout "admin"
 
   def index
+  	@user = current_user
   	@settings = current_user.setting
   end
+	def show
+	  @setting = Setting.find(params[:id])
+	end
 	def create
-	  @setting = current_user.build_setting(setting_params)
+  	@setting = current_user.build_setting(setting_params)
 
-	   if @setting.save
+	  if @setting.save
 	    redirect_to settings_path
 	  else
 	    render :new
@@ -16,10 +21,6 @@ class SettingsController < ApplicationController
   def new
     @setting = current_user.build_setting
   end
-
-	def show
-	  @setting = Setting.find(params[:id])
-	end
 # a partir de aqui es prueba
 	def edit
   	@setting = Setting.find(params[:id])
@@ -35,6 +36,6 @@ class SettingsController < ApplicationController
 	end
 	private
 		def setting_params
-  	params.require(:setting).permit(:country, :language)
+  	params.require(:setting).permit(:country,:language)
 	end
 end
