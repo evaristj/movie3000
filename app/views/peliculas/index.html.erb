@@ -15,9 +15,14 @@
 			Año de estreno: <p class="bbddpelis"><%= peli.year %></p> 
 		</div>
 	</div>
-		<p> <%= link_to "Editar Pelicula", edit_pelicula_path(peli) %> </p>
-	<hr>
+	<p> <%= link_to "Editar Pelicula", edit_pelicula_path(peli) %></p><hr>
 	<%end%>
-	<p> <%= link_to "Añadir nueva pelicula", new_pelicula_path %> </p>
-<hr>
+	<div class="row">
+		<div class="col-md-3">
+			<p class="bbddpelis"> <%= link_to "Añadir nueva pelicula", new_pelicula_path %> </p>
+		</div>
+		<div class="col-md-3">
+			<p class="bbddpelis"> <%= link_to "Inicio", root_path %> </p>
+		</div>
+	</div><hr>
 </div>
