@@ -36,8 +36,25 @@
 		 		</div>
 		</div><br><hr>
 		<div class="col-xs-12 col-md-8 col-lg-8">
-			<div class="interlineado"><p><b>Personal information </b><a href="#"><b>	Edit</b></a></p>
-			<p><h5>Edit personal information associated with your Rotten Tomatoes account.</h5></p></div><br>
+				<div class="interlineado"><p><b>Pago con Stripe </b><a href="#"><b>	Edit</b>	</a></p><p><h5>
+				</div>
+			 		<% if !@payment.nil? %>
+						<h2>Payments</h2>
+						<%@payment.each do |payment|%>
+							<p><b>Subscription active:</b></p>
+							<p><%= payment.subscription %></p>
+							<p><b>Payment Channel:</b></p>
+							<p><%= payment.channel %></p>
+							<p><b>Payment active:</b></p>
+							<p><%= payment.active %></p>
+							<p><b>Plan:</b></p>
+							<p><%= payment.plan %></p> 
+							<p><b>Amount payed:</b></p>
+							<p><%= payment.amount %></p>
+							<hr>				
+						<%end%>
+					<%end%>
+ 				</div></h5></p><br><br><hr>
 
 			<div class="interlineado"><p><b>Change or Confirm Email Address </b><a href="#"><b> Edit </b></a></p>
 			<p><h5>Change or confirm your email address for your Rotten Tomatoes account.</h5></p></div><br>
