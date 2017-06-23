@@ -1,5 +1,8 @@
 class Pelicula < ApplicationRecord
-	has_many :comentarios, dependent: :destroy
+	has_many :comentarios
+	def self.search(search)
+     	where("name like ?", "%" + "%#{search}%" + "%")
+   	end
 	def self.search_name(search_name)
     where(name: search_name)
   end
