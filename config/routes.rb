@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get '/select_plan' => 'payment_select#select_plan', as: :select_plan
+  get '/select_monthly_subscription' => 'payment_select#select_monthly_subscription', as: :select_monthly_subscription
+
+
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   ActiveAdmin.routes(self)
@@ -24,11 +28,11 @@ Rails.application.routes.draw do
 
   get '/index' => 'statics#index', :as => :index
 
-  #root :to =>"statics#about"
 
   get '/about' => 'statics#about', :as => :about
 
-  #root :to =>"peliculas#index"
+  get 'select_peliculas/index'
+
 
   resources :peliculas do
     
@@ -36,8 +40,10 @@ Rails.application.routes.draw do
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+
+  resources :select_peliculas, only: :index
   resources :charges
+  resources :payments
 
   root :to =>"statics#index"
 
