@@ -6,10 +6,38 @@
 	}
 </style>
 <!-- enlace a header-->
-<%= render "shared/header" %>
+<%= render"shared/header" %>
 <div class="container">
 	<div class="row">
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+		<div class="col-md-4 col-xs-4" style = "text-align:center;">
+			<%= form_tag(root_path, :method => "get", id: "search-name-form")do %>
+			<%= text_field_tag :search_name, params[:search_name], placeholder: "Buscar por título" %>
+			<%= submit_tag "Buscar" %>
+			<% end %>
+		</div>
+		<div class="col-xs-4 col-md-4" style="text-align:center;">
+    	<%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
+       <%= text_field_tag :search_year, params[:search_year], placeholder: "Buscar por Año" %>
+       <%= submit_tag "Buscar" %>
+    	<% end %>
+  	</div>
+	</div>
+	<div class="row">
+	<%if !@peliculas.nil?%>
+		<% @peliculas.each do |peli| %>
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<div class="latest-movie">
+					<a href="#"> <img src=" <%= peli.url%>"> </a>
+					<p><b> Nombre: </b> <%= peli.name%> </p>
+					<p><b> Actor principal: </b> <%= peli.main_actor%> </p>
+					<p><b> Año: </b> <%= peli.year%> </p>
+				</div>
+			</div>
+		<% end %>
+		<% end %>
+	</div>
+	<div class="row">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">Titanic</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981373/titanic_cyh7uc.jpg">
@@ -18,7 +46,7 @@
         <p class="text-center"><strong>Año:</strong> 1996</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">L.A. Confidencial</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981371/laconfidential_w0smck.jpg">
@@ -27,7 +55,7 @@
         <p class="text-center"><strong>Año:</strong> 1996</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">Terminator 2</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981368/terminator_2_whqsub.jpg">
@@ -36,7 +64,7 @@
         <p class="text-center"><strong>Año:</strong> 1991</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">El Lobo De Wall Street</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981362/lobo_de_wall_street_ncbchs.jpg">
@@ -45,7 +73,7 @@
         <p class="text-center"><strong>Año:</strong> 2013</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">Las Cuatro Plumas</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981342/4_plumas_kbqxdf.jpg">
@@ -54,7 +82,7 @@
         <p class="text-center"><strong>Año:</strong> 2000</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">Braveheart</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981360/bravehearth_b9k8kl.jpg">
@@ -63,7 +91,7 @@
         <p class="text-center"><strong>Año:</strong> 1995</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">Scary Movie</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981359/scary_movie_t8aeov.jpg">
@@ -72,7 +100,7 @@
         <p class="text-center"><strong>Año:</strong> 2000</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">Scream</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981358/scream_ybxxug.jpg">
@@ -81,7 +109,7 @@
         <p class="text-center"><strong>Año:</strong> 1993</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">Matrix</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981355/matrix_o8kdls.jpg">
@@ -90,7 +118,7 @@
         <p class="text-center"><strong>Año:</strong> 1999</p>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-xs-12 altura_columna">
+    <div class="col-lg-4 col-md-6 col-xs-12">
       <div class="carteles">
         <h3 class="text-center">John Wick 2</h3>
             <img class="img-responsive center-block" src="http://res.cloudinary.com/dezg5tuwh/image/upload/v1497981339/jhon_wick2_c9mytn.jpg">
