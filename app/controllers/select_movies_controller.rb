@@ -3,7 +3,7 @@ class SelectMoviesController < ApplicationController
   def index
 		@user = current_user
 		@peliculas = Pelicula.all
- 		
+ 		@pelicula = Pelicula.find(params[:id])
 		if params[:search]
 			@peliculas = Pelicula.search(params[:search]).order("created_at DESC")			
 		elsif params[:search_name]

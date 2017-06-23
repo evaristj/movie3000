@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'select_movies/index'
+
   devise_for :users
 
   get '/select_plan' => 'payment_select#select_plan', as: :select_plan
@@ -12,7 +14,11 @@ Rails.application.routes.draw do
 
   get 'settings/index'
 
+  resources :charges
+
   resources :settings
+
+  resources :select_movies, only: :index
 
   get 'comentarios/index'
 
@@ -40,11 +46,11 @@ Rails.application.routes.draw do
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  
   resources :select_peliculas, only: :index
   resources :charges
   resources :payments
-
+  
   root :to =>"statics#index"
 
 end

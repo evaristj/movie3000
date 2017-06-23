@@ -22,10 +22,11 @@
         <div class="row text-center">
           <div class="col-xs-12">
             <button class="btn btn-info">Pagar Ahora!</button>
+            <%= render 'charges/new' %>
           </div>
         </div>
       </div>
-    <% end %>
+    <!-- <% end %> -->
 
     <%= link_to select_plan_path(pelicula_id: @pelicula.id, user_email: @user.email, pelicula_precio: @pelicula.precio) do %>
       <div class="col-xs-5 peli_container buy right">
