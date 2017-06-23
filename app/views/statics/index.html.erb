@@ -23,17 +23,17 @@
   	</div>
 	</div>
 	<div class="row">
-	<%if !@peliculas.nil?%>
-		<% @peliculas.each do |peli| %>
-			<div class="col-sm-6 col-md-4 col-lg-3">
-				<div class="latest-movie">
-					<a href="#"> <img src=" <%= peli.url%>"> </a>
-					<p><b> Nombre: </b> <%= peli.name%> </p>
-					<p><b> Actor principal: </b> <%= peli.main_actor%> </p>
-					<p><b> Año: </b> <%= peli.year%> </p>
+		<%if !@peliculas.nil?%>
+			<% @peliculas.each do |peli| %>
+				<div class="col-xs-12 col-md-6 col-lg-4">
+				<br>
+					<div align="center">
+						<a href="<%= pelicula_path(peli) %>"> <img class="latest-movie" src=" <%= peli.url%>"> </a>
+						<p><b> Nombre: </b> <%= peli.name%> </p>
+						<p><b> Año: </b> <%= peli.year%> </p>
+					</div>
 				</div>
-			</div>
-		<% end %>
+			<% end %>
 		<% end %>
 	</div>
 	<div class="row">
