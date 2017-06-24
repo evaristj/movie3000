@@ -1,6 +1,9 @@
 class ChargesController < ApplicationController
 	before_action :authenticate_user!
 	def new
+		@pelicula = params[:pelicula_id]
+    @email = params[:user_email]
+    @amount = params[:pelicula_precio]
 	end
 	def create
 	  # Amount in cents

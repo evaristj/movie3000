@@ -3,7 +3,9 @@ class StaticsController < ApplicationController
   def index
   	@pelicula = Pelicula.all
 
-    if params[:search_name]
+    if params[:search]
+    	@peliculas = Pelicula.search(params[:search])
+    elsif	params[:search_name]
       @peliculas = Pelicula.search_name(params[:search_name]).order('created_at DESC')
     elsif params[:search_year]
       @peliculas = Pelicula.search_year(params[:search_year])
