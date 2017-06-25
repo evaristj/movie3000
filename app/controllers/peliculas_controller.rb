@@ -2,21 +2,6 @@ class PeliculasController < ApplicationController
    before_action :authenticate_user!, except: [:index, :show]
    def index
    	@peliculas = Pelicula.all
-      if params[:search]
-         @peliculas = Pelicula.search(params[:search]).order("created_at DESC")
-         @@my_value=@peliculas
-         redirect_to peliculas_index_search_path         
-         
-      elsif params[:search_main_actor]
-         @peliculas = Pelicula.search_main_actor(params[:search_main_actor]).order("created_at DESC")
-         @@my_value=@peliculas
-         redirect_to peliculas_index_search_path
-         
-      elsif params[:search_year]
-         @peliculas = Pelicula.search_year(params[:search_year]).order("created_at DESC")
-         @@my_value=@peliculas
-         redirect_to peliculas_index_search_path
-      end
    end
    
    def show
