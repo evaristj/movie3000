@@ -24,7 +24,7 @@
 	</div>
 	<div class="row">
 		<%if !@peliculas.nil?%>
-			<% @peliculas.find_each do |peli| %>
+			<% @peliculas.each do |peli| %>
 				<div class="col-xs-12 col-md-6 col-lg-4"><br>
 					<div align="center">
 					<a href="<%= pelicula_path(peli) %>"> <img class="latest-movie" 

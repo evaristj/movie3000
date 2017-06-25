@@ -13,7 +13,7 @@ class StaticsController < ApplicationController
   end
 
   def show
-  	@pelicula = Pelicula.find(params[:id])
+  	@pelicula = Pelicula.where(params[:id])
   end
 
   def about
