@@ -12,6 +12,10 @@ class StaticsController < ApplicationController
       @peliculas = Pelicula.all.order('created_at DESC')
   end
 
+  def show
+  	@pelicula = Pelicula.where(params[:id])
+  end
+
   def about
   end
 end
