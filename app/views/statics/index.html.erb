@@ -23,10 +23,10 @@
   	</div>
 	</div>
 	<div class="row">
-		<%if !@peliculas.nil?%>
+		
 			<% @peliculas.each do |peli| %>
 				<div class="col-xs-12 col-md-6 col-lg-4"><br>
-					<div align="center">
+					<div align="center" >
 					<a href="<%= pelicula_path(peli) %>"> <img class="latest-movie" 
 						src="<%= peli.url %>"> </a>
 						<p class="text-center"><b> Nombre: </b> <%= peli.name%> </p>
@@ -34,7 +34,7 @@
 					</div>
 				</div>
 			<% end %>
-		<% end %>
+		
 	</div>
 	<div class="row">
     <div class="col-lg-4 col-md-6 col-xs-12">

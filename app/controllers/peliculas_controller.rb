@@ -8,13 +8,11 @@ class PeliculasController < ApplicationController
          redirect_to peliculas_index_search_path         
          
       elsif params[:search_main_actor]
-         #redirect_to movies_index_search_path
          @peliculas = Pelicula.search_main_actor(params[:search_main_actor]).order("created_at DESC")
          @@my_value=@peliculas
          redirect_to peliculas_index_search_path
          
       elsif params[:search_year]
-         #redirect_to movies_index_search_path
          @peliculas = Pelicula.search_year(params[:search_year]).order("created_at DESC")
          @@my_value=@peliculas
          redirect_to peliculas_index_search_path
