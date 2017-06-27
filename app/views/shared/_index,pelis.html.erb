@@ -1,0 +1,34 @@
+<div class="container">
+	<% @peliculas.each do |peli| %>
+  <div class="col-md-3 col-xs-6 col-sm-4 peli_container">
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <img class="img-responsive" src= '<%= peli.url %>' alt="">
+      </div>
+    </div>
+    <div class="row text-center margin_top">
+      <div class="col-xs-12 text_header">
+        <%= peli.name %>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <%= peli.main_actor %>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <%= peli.year %>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <%= link_to select_movies_path(id: peli.id) do %>
+          <button class="btn btn-info">100€</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+  </div>
+<% end %>
+</div>
