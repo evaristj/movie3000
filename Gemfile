@@ -64,3 +64,11 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'cancancan', '~> 2.0'
 # gema para pagos por internet
 gem 'stripe', '~> 2.11'
+# gema para errores
+group :development do
+gem 'better_errors', '~> 2.1', '>= 2.1.1'
+gem "binding_of_caller"
+end
+
+# Enviar emails
+gem 'dotenv-rails'
