@@ -10,70 +10,83 @@
 
 <!-- cuerpo de página settings-->
 <div class="container">
-	<% if flash.present? %>
-		<div class="row">
-			<div class="col-sm-12 col-md-6 colmd-offset-3" style="padding:25px">
-			<%= render partial: "shared/flash_messages", flash: flash %>
-		</div>
-	<% end %>
 	<div class="row">
-		<p class="opciones">CONFIGURACIÓN DE LA CUENTA</p><hr><br>
-		<div class="col-xs-12 col-md-10 col-lg-10">
-			<h4>Cambiar idioma y país de tu cuenta</h4>
-					<!-- COMPROBACIO DE SETTING SI NO ES NULL -->   	 
-				 	<% if !@setting.nil? %>
-		 		<div class="col-md-3">		 
-		   		<p>País: <%= @setting.country %></p><br/><br/>
-		   	</div>
-		   	
-		   		<p>Idioma: <%= @setting.language %></p><br/><br/>	 
-		   	<div class="col-md-3">
-		      <%= link_to 'Editar', edit_setting_path(@setting.id), :title => "Editar", class:'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
-		      <br></br>
-				 	<%else%>
-				   	<%= link_to 'Añadir', new_setting_path, title:"Añadir setting!!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
-				 	<%end%>
-		 		</div>
-		</div><br><hr>
-		<div class="col-xs-12 col-md-8 col-lg-8">
-				<div class="interlineado"><p><b>Pago con Stripe </b><a href="#"><b>	Edit</b>	</a></p><p><h5>
-				</div>
-			 		<% if !@payment.nil? %>
-						<% @payment.each do |pago| %>
-                <p><%= pago.user_id %></p>
-                <p><%= pago.created_at %></p>
-                <p><%= pago.channel %></p>
-                <p><%= pago.subscription %></p>
-                <p><%= pago.amount.to_f / 100 %>&nbsp;€></p>
+    <div class="col-xs-12">
+      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#info"><span class="glyphicon glyphicon-setting"></span>&nbsp;&nbsp;Account Settings</button>
+      <div id="info" class="collapse in">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="info">
+              <th>Id</th>
+              <th>Email</th>
+              <th>Current Sign In At</th>
+              <th>Sign In Count</th>
+              <th>Created At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @user.id %></td>
+              <td><%= @user.email %></td>
+              <td><%= @user.current_sign_in_at %></td>
+              <td><%= @user.sign_in_count %></td>
+              <td><%= @user.created_at %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#info"><span class="glyphicon glyphicon-setting"></span>&nbsp;&nbsp;Pagos</button>
+      <div id="info" class="collapse in">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="info">
+              <th>User Id</th>
+              <th>Date</th>
+              <th>Channel</th>
+              <th>Subscription</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @payment.each do |pago| %>
+              <tr>
+                <td><%= pago.user_id %></td>
+                <td><%= pago.created_at %></td>
+                <td><%= pago.channel %></td>
+                <td><%= pago.subscription %></td>
+                <td><%= pago.amount.to_f / 100 %>&nbsp;€</td>
+              </tr>
             <% end %>
-					<%end%>
- 		</div></h5></p><br><br><hr>
-	</div>
-			<div class="interlineado"><p><b>Change or Confirm Email Address </b><a href="#"><b> Edit </b></a></p>
-			<p><h5>Change or confirm your email address for your Rotten Tomatoes account.</h5></p></div><br>
-
-			<div class="interlineado"><p><b>Profile Display Name </b><a href="#"><b> Edit </b></a></p>
-			<p><h5>Edit your public profile display name.</h5></p></div><br>
-
-			<div class="interlineado"><p><b>Profile Details </b><a href="#"><b> Edit </b></a></p>
-			<p><h5>Edit public profile information about yourself.</h5></p></div><br>
-
-			<div class="interlineado"><p><b>Email Preferences </b><a href="#"><b> Edit </b></a></p>
-			<p><h5>Modify your email subscription settings.</h5></p></div><br>
-
-			<div class="interlineado"><p><b>Password </b><a href="#"><b> Edit </b></a></p>
-			<p><h5>Change the password for your Rotten Tomatoes account.</h5></p></div><br>
-
-			<div class="interlineado"><p><b>Privacy Settings </b><a href="#"><b> Edit </b></a></p>
-			<p><h5>Manage your profile visibility and share settings.</h5></p></div><br>
-
-			<div class="interlineado"><p><b>Change Country </b><a href="#"><b> Edit </b></a></p>
-			<p><h5>Manage your localization setting.</h5></p></div><br>
-			<div class="interlineado"><p><b>Delete Account </b><a href="#"><b> Delete Account</b></a></p>
-			<p><h5>Terminate your Rotten Tomatoes account and disconnect from any attached social networks.</h5></p></div><br>
-		</div>
-	</div>
-	<hr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#country"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;Country</button>
+      <div id="country" class="collapse in">
+        <div class="well text-center">
+          <%= @setting.country %>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#lang"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Language</button>
+      <div id="lang" class="collapse in">
+        <div class="well text-center">
+          <%= @setting.language %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Editar", edit_setting_path(@setting), :nom => "Editar", :class => 'btn btn-warning btn-block btn-lg', style:"color: white;" %>
+  <br>
+  <br>
 </div>
 <hr>
 
