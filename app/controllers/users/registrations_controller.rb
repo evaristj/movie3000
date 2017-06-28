@@ -9,8 +9,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    @user = current_user
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
     super
-  end
+    if @user.persisted?
+      Marketing::OnboardingMailer.perform_now(@user)
+    end  end
 
   # GET /resource/edit
   # def edit
