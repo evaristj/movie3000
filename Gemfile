@@ -74,3 +74,5 @@ gem 'stripe', '~> 2.11'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'fog'
+
+gem 'sidekiq'
