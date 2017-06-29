@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_names
   # get 'payment_select/select_plan'
   # get 'payment_select/select_monthly_subscription'
   get 'select_movies/index'

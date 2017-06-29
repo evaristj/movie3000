@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Names</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Login</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_names.each do |user_name| %>
+      <tr>
+        <td><%= user_name.email %></td>
+        <td><%= user_name.login %></td>
+        <td><%= link_to 'Show', user_name %></td>
+        <td><%= link_to 'Edit', edit_user_name_path(user_name) %></td>
+        <td><%= link_to 'Destroy', user_name, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Name', new_user_name_path %>

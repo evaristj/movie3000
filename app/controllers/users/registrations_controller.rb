@@ -1,6 +1,30 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  # The path used after sign up.
+     def after_sign_up_path_for(resource)
+       settings_index_path
+     end
+
+  # GET /resource/sign_up
+   def new
+  super
+   end
+
+  # POST /resource
+  def create
+  # Create the user from params
+  @user = current_user
+  # En el SCHEMA de la tabla USERS username,email
+  devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email])    
+  super
+  if @user.save
+    # Deliver the signup email
+    UserNotifierMailer.send_signup_email(@user).deliver
+    else
+      return redirect_to root_path
+  end
+  end
 
   # GET /resource/sign_up
   # def new
@@ -8,13 +32,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    @user = current_user
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
-    super
-    if @user.persisted?
-      Marketing::OnboardingMailer.perform_now(@user)
-    end  end
+  #  def create
+  #  super
+  #  end  end
 
   # GET /resource/edit
   # def edit
@@ -52,10 +72,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
   # end
 
-  # The path used after sign up.
-   def after_sign_up_path_for(resource)
-     settings_index_path
-   end
+  
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
