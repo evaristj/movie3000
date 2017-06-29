@@ -3,14 +3,15 @@ class SettingsController < ApplicationController
 	layout "admin"
 
   def index
-  	@user = current_user
   	@setting = current_user.setting
-  	@payment = Payment.where(user_id: @user.id).all
-  	
+  	@payment = current_user.payments
   end
+
 	def show
 	  @setting = Setting.find(params[:id])
 	end
+
+
 	def create
   	@setting = current_user.build_setting(setting_params)
 
@@ -36,7 +37,13 @@ class SettingsController < ApplicationController
 		render :edit
   	end
 	end
-	def setting_params
-  	params.require(:setting).permit(:country,:language)
+	def destroy
+   @setting = Setting.find(params[:id])
+   @setting.destroy
+   redirect_to settings_path
 	end
+	private
+		def setting_params
+	  	params.require(:setting).permit(:country,:language)
+		end
 end
