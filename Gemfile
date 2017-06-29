@@ -38,12 +38,13 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem  'sqlite3', '1.3.12'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-  gem  'sqlite3', '1.3.12'
+  
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -51,6 +52,7 @@ end
 
 group :production do
 	gem 'pg', '0.18.4'
+	gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -61,7 +63,7 @@ gem "font-awesome-rails"
 #user and admin user authentication
 gem 'devise'
 
-gem 'bcrypt', '~>3.1.11'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 	
 # Active admin
 gem 'activeadmin', github: 'activeadmin'
@@ -69,10 +71,14 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'cancancan', '~> 2.0'
 # gema para pagos por internet
 gem 'stripe', '~> 2.11'
+gem 'rails-i18n'
 
+gem 'sidekiq', '~> 5.0', '>=5.0.3' 
 # para leer variables de entorno
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'redis', '~> 3.3', '>= 3.3.3'
 
-gem 'fog'
+gem 'sinatra', require: false
+gem 'slim'
 
-gem 'sidekiq'
+gem 'sidekiq-status'
