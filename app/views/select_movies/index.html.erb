@@ -27,7 +27,7 @@
       </div>
     <% end %>
 
-    <%= link_to select_plan_path(pelicula_id: @pelicula.id, user_email: @user.email, pelicula_precio: @pelicula.precio) do %>
+    <%= link_to select_monthly_subscription_path(pelicula_id: @pelicula.id, user_email: @user.email, pelicula_precio: @pelicula.precio) do %>
       <div class="col-xs-5 peli_container buy right">
         <div class="row text-center">
           <div class="col-xs-12">

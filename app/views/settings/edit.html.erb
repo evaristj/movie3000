@@ -1,22 +1,19 @@
 <div class="container">
   <div class="box">
    <%= form_for @setting do |setting|%>
-    <div class="field">
-      <p>Selecciona un pais:</p>
-      <%= setting.select :country, options_for_country, prompt: 'Select One', class: 'form-control' %>
-    </div>
-    <hr>
-    <div class="field">
-      <p>Selecciona un idioma:</p>
-      <%= setting.select :language, options_for_language, prompt: 'Select One', class: 'form-control' %>
-    </div>
-    <br>
-
-    <%= setting.submit "enviar datos", class:'btn btn-sm btn-info boto' %>
-
+      <div class="field">
+        <p>Selecciona un pais:</p>
+        <%= setting.select :country, options_for_country, prompt: 'Select One', class: 'form-control' %>
+      </div>
+      <hr>
+      <div class="field">
+        <p>Selecciona un idioma:</p>
+        <%= setting.select :language, options_for_language, prompt: 'Select One', class: 'form-control' %>
+      </div>
+      <br>
+      <%= setting.submit "enviar datos", class:'btn btn-sm btn-info boto' %>
     <% end %>
   </div> <!-- end box -->
-
    <!--añadido flash-->
    <% if flash.present? %>
       <div class="row">

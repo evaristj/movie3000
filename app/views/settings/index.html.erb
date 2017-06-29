@@ -26,11 +26,11 @@
           </thead>
           <tbody>
             <tr>
-              <td><%= @user.id %></td>
-              <td><%= @user.email %></td>
-              <td><%= @user.current_sign_in_at %></td>
-              <td><%= @user.sign_in_count %></td>
-              <td><%= @user.created_at %></td>
+              <td><%= current_user.id %></td>
+              <td><%= current_user.email %></td>
+              <td><%= current_user.current_sign_in_at %></td>
+              <td><%= current_user.sign_in_count %></td>
+              <td><%= current_user.created_at %></td>
             </tr>
           </tbody>
         </table>
@@ -66,7 +66,7 @@
       </div>
     </div>
   </div>
-  <% @setting.nil? %>
+  <%if !@setting.nil? %>
 	  <div class="row">
 	    <div class="col-xs-6">
 	      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#country"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;Country</button>
@@ -85,11 +85,10 @@
 	      </div>
 	    </div>
 	  </div>
-	
-  <%= link_to "Editar", edit_setting_path(@setting), :nom => "Editar", :class => 'btn btn-warning btn-block btn-lg', style:"color: white;" %>
+  	<%= link_to "Editar", edit_setting_path(@setting), :nom => "Editar", :class => 'btn btn-warning btn-block btn-lg', style:"color: white;" %>
   <% else %>
   	<%= link_to 'Añadir', new_setting_path %>
-<% end %>
+	<% end %>
   <br>
   <br>
 </div>
