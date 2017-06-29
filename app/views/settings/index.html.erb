@@ -66,25 +66,30 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-6">
-      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#country"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;Country</button>
-      <div id="country" class="collapse in">
-        <div class="well text-center">
-          <%= @setting.country %>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#lang"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Language</button>
-      <div id="lang" class="collapse in">
-        <div class="well text-center">
-          <%= @setting.language %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% @setting.nil? %>
+	  <div class="row">
+	    <div class="col-xs-6">
+	      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#country"><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;Country</button>
+	      <div id="country" class="collapse in">
+	        <div class="well text-center">
+	          <%= @setting.country %>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="col-xs-6">
+	      <button type="button" class="btn btn-info btn-block btn-lg" data-toggle="collapse" data-target="#lang"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Language</button>
+	      <div id="lang" class="collapse in">
+	        <div class="well text-center">
+	          <%= @setting.language %>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	
   <%= link_to "Editar", edit_setting_path(@setting), :nom => "Editar", :class => 'btn btn-warning btn-block btn-lg', style:"color: white;" %>
+  <% else %>
+  	<%= link_to 'Añadir', new_setting_path %>
+<% end %>
   <br>
   <br>
 </div>

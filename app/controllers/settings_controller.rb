@@ -6,6 +6,7 @@ class SettingsController < ApplicationController
   	@user = current_user
   	@setting = current_user.setting
   	@payment = Payment.where(user_id: @user.id).all
+  	
   end
 	def show
 	  @setting = Setting.find(params[:id])
@@ -35,8 +36,7 @@ class SettingsController < ApplicationController
 		render :edit
   	end
 	end
-	private
-		def setting_params
+	def setting_params
   	params.require(:setting).permit(:country,:language)
 	end
 end
