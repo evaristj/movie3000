@@ -8,7 +8,7 @@
 <!-- enlace a header-->
 <%= render"shared/header" %>
 <div class="container">
-	<div class="row">
+	<div class="row"><!-- busqueda por nombre, genero y año de la pelicula-->
 		<div class="col-md-4 col-xs-4" style = "text-align:center;">
 			<%= form_tag(root_path, :method => "get", id: "search-name-form")do %>
 			<%= text_field_tag :search_name, params[:search_name], placeholder: "Buscar por título" %>
@@ -21,7 +21,14 @@
        <%= submit_tag "Buscar" %>
     	<% end %>
   	</div>
-	</div>
+		<div class="col-md-4"><!--busqueda por genero de la pelicula-->
+	    <div class="form-inline">
+	      <%= form_tag(root_path, :method => "get", id: "search-genre-form") do %>
+				<%= select_tag :search_genre, ("<option>Selecciona por género</option><br><option>Drama</option><option>Fantasia</option><option>Comedia</option><option>Animación</option><option>Romántico</option><option>Accion</option><option>Terror</option><option>Musical</option><option>Aventura</option><option>Ciencia ficción</option><option>Suspense</option><option>Bélico</option><option>Western</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
+				<% end %>
+	    </div> 
+	  </div>
+	</div><br><!-- fin row busqueda-->
 	<div class="row"><!-- peliculas bbdd-->
 		<div class="col-xs-12">
 			<% @peliculas.each do |peli| %>

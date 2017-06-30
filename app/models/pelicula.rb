@@ -8,4 +8,8 @@ class Pelicula < ApplicationRecord
     where(year: search_year)
   end
 
+  def self.search_genre(search_genre)
+  where(genre: search_genre)
+	end
+
 end
