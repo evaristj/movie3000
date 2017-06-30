@@ -6,7 +6,7 @@ class Ability
     if user.id == 2
     can :manage, :all
     else
-    can :read, Pelicula
+    can :read, :all
     # can :update_locate, User
     # can :update_active, User
     # can :read, AwAccount
