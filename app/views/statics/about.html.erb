@@ -7,11 +7,53 @@
 	body {
 		font-family: 'Mogra', cursive;
 	}
+	h1{
+		color: #DC3522;
+	}
 </style>
-<!-- cuerpo about-->
-<div class="sobre-nosotros">
-	Sobre Movie 3000
-
+<!-- cuerpo about-->								
+<div class="container">
+	<p class="pabout"><b>Esta página ha sido creada como proyecto final al curso de programación impartido por la empresa Kolau denominado #Youth Can DoIt2020.</b></p>
+	<p class="pabout">Se trata de una web que ha tomado como ejemplo Rotten Tomatoes para su creación. Te animo a registrarte, publicar comentarios en las películas, añadir nuevas peliculas que  tu gusto deberían de estar aquí ¡y probar todas las funcionalidades que te ofrece <b>Movie3000!</b></p>
+	<p class="pabout">El baremo de las peliculas se basa en <b>estrellas</b>, con una calificación de 1 a 10, <b>siendo 1 el mínimo y 10 el máximo,</b> se basan en la calificación dada por los usuarios que han visto la película, en nuestras opiniones no participan críticos de otros medios de comunicación ni tampoco nos paga la productora de la película para realizar una buena crítica, pues <b>lo que deseamos es que nuestras críticas sean lo más ajutable a la realidad</b> de los miles de usuarios y después saques tus propas conclusiones.</p>
+	<hr>
+	<p class="pabout">Aquí te mostramos un formulario de conacto que aún no está disponible su funcionamiento, ¡pero pronto lo estará!</p> <p class="pabout"><b>Espero que disfrutes de tu paseo por esta página</b></p>
+	<hr>
+	<div class="col-xs-12 container-contact" id="contact"><!-- formulario de contacto -->
+		<form action="" class="">
+			<!-- agrupar formularios form-group agrega espaciado-->
+			<div class="form-group">
+				<label for="nombre"><h3>Formulario de contacto:</h3></label>
+			</div>
+			<div class="form-group">
+				<label for="nombre">Nombre:</label>
+				<input class="form-control" id="nombre" type="text" placeholder="Nombre">
+			</div>				
+			<div class="form-group">
+				<label for="option">Elige el motivo:</label>
+				<select class="form-control" name="" id="option">
+					<option value="">Negocios</option>
+					<option value="">Opiniones</option>
+					<option value="">Otros</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<label class="sr-only" for="correo">Correo:</label> <!-- class="sr-only" solo visible para dispositivos de lectura -->
+					<div class="input-group-addon">@</div> <!-- class="input-group-addon" se adiere al grupo como addon -->
+					<input class="form-control" id="correo" type="text" placeholder="e-mail"></input>
+					 <!-- class="form-control" estilo de los inputs -->
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mensaje">Mensaje:</label>
+				<textarea class="form-control perfil-textarea" id="mensaje" placeholder="Escribe tu mensaje"></textarea>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-danger disabled">enviar</button>
+			</div>
+		</form>
+	</div> <!-- fin formulario de contacto -->
 </div>
 
 <!-- enlace a footer-->
