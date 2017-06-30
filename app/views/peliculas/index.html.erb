@@ -1,5 +1,6 @@
 <div class="container">
-	<center><h1>Aquí todas las películas que tenemos en la BBDD</h1></center><hr>
+	<center><h1>Aquí todas las películas que tenemos en la BBDD</h1></center>
+	<p class="bbddpelis"> <%= link_to "Inicio", root_path %></p><hr>
 	<% @peliculas.each do |peli| %>
 	<div class="row">
 		<div class="col-md-3"> 
