@@ -1,6 +1,6 @@
 # Movie 3000
 
-Este es mi primer trabajo de programación gracias a un curso patrocinado por [Kolau con ayuda del Ayuntamiento e Elda.](https://movie3000.herokuapp.com/)
+Este es mi primer trabajo de programación gracias a un curso patrocinado por [Kolau con ayuda del Ayuntamiento e Elda.](https://www.noeresdeeldasino.com/2017/03/14/arranca-curso-la-consultora-silicon-valley-formara-siete-jovenes-eldenses-programacion-informatica.html)
 
 Este fue el comienzo y me ayudó a introducirme en:
 
