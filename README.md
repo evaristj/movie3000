@@ -23,3 +23,8 @@ Este fue el comienzo y me ayudó a introducirme en:
 * Trabajar en equipo
 
 ### ...Y gracias a ello pude seguir mi formación y continuar aprendiendo.
+
+
+# Funcionalidad de Movie3000
+
+Puedes crear usuarios, hacer login, añadir películas a la base de datos, buscar por año, por género, por título, realizar compras gracias a la api de stirpe, etc.
