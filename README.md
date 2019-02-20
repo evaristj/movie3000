@@ -2,23 +2,24 @@
 
 Este es mi primer trabajo de programación gracias a un curso patrocinado por [Kolau con ayuda del Ayuntamiento e Elda.](https://movie3000.herokuapp.com/)
 
-Things you may want to cover:
+Este fue el comienzo y me ayudó a introducirme en:
 
-* Ruby version
+* Ruby on Rails
 
-* System dependencies
+* JavaScript
 
-* Configuration
+* PostgreSQL
 
-* Database creation
+* HTML5, CSS3 y SASS
 
-* Database initialization
+* Bootstrap
 
-* How to run the test suite
+* JQuery
 
-* Services (job queues, cache servers, search engines, etc.)
+* Adquirir conocimientos básicos sobre programación
 
-* Deployment instructions
+* Git y control de versiones
 
-* ...
-# aplicacion
+* Trabajar en equipo
+
+### ...Y gracias a ello pude seguir mi formación y continuar aprendiendo.
