@@ -1,7 +1,6 @@
-# README
+# Movie 3000
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este es mi primer trabajo de programación gracias a un curso patrocinado por Kolau con ayuda del Ayuntamiento e Elda.
 
 Things you may want to cover:
 
